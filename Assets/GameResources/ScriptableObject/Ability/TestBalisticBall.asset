@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573756e13733fe142871cac07b467f95, type: 3}
+  m_Name: TestBalisticBall
+  m_EditorClassIdentifier: 
+  _name: TestAbility
+  _costMana: 0
+  _rechargeTime: 1
+  _speedSpell: 2
+  _lifeTimeSpell: 5
+  _path: {fileID: 3980962291942252267, guid: 56ba3be64ffbdb74e80c43d2696476f3, type: 3}
+  _spell: {fileID: 7488722373385534346, guid: 56ba3be64ffbdb74e80c43d2696476f3, type: 3}
+  _abilityIcon: {fileID: 5583492486709806376, guid: 3421078018dc3934a8c1ab3b7bf89aa0, type: 3}
