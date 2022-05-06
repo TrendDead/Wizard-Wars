@@ -15,6 +15,7 @@ public class LineShoot : Path
         mousePos = (mousePos - positionFrom.position).normalized;
         spell = Instantiate(spell, positionFrom.position, Quaternion.identity);
         spell.LifeTimeSpell = lifeTimeSpell;
+        spell.StartTimerLife();
         _rb2d = spell.GetComponent<Rigidbody2D>();
         _rb2d.gravityScale = 0;
         _rb2d.velocity = new Vector3(mousePos.x, mousePos.y, 0f) * speedSpell;
