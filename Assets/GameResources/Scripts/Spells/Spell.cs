@@ -14,7 +14,8 @@ public class Spell : MonoBehaviour
 
     private Rigidbody2D _rb2d;
 
-    [HideInInspector] public float LifeTimeSpell;
+    //[HideInInspector] 
+    public float LifeTimeSpell;
     
     private void OnEnable()
     {
@@ -25,14 +26,20 @@ public class Spell : MonoBehaviour
 
     private void Update()
     {
+        /*
         LifeTimeSpell -= Time.deltaTime;
         if (LifeTimeSpell <= 0)
             Destroy(gameObject);
+        */
     }
     /// <summary>
     /// Старт таймера жизни спела
     /// </summary>
     /// <returns></returns>
+    public void StartTimerLife()
+    {
+        StartCoroutine(StartSpellTimer());
+    }
     public IEnumerator StartSpellTimer()
     {
         yield return new WaitForSeconds(LifeTimeSpell);
