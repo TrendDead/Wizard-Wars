@@ -5,18 +5,25 @@
 /// </summary>
 class BallisticShoot : Path
 {
-    private Rigidbody2D _rb;
-    private LineRenderer _lr;
-    private Vector2 _dragSatatPos;
+    [SerializeField]
     private float _power = 2.5f;
-    private bool _isStartShoot = true;
+
+    private LineRenderer _lr;
+    private Rigidbody2D _rb;
     private Spell _spell;
+    private Vector2 _dragSatatPos;
+    private bool _isStartShoot = true;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _lr = GetComponent<LineRenderer>();
         _rb.simulated = false;
+    }
+
+    private void Start()
+    {
+        _spell = GetComponent<Spell>();
     }
 
     private void LateUpdate()
@@ -44,6 +51,8 @@ class BallisticShoot : Path
         if (Input.GetMouseButtonUp(0) && _isStartShoot)
         {
             _rb.simulated = true;
+
+            _spell.StartTimerLife();
 
             Vector2 dragEndPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 velocity = (dragEndPos - _dragSatatPos) * _power;
@@ -79,10 +88,10 @@ class BallisticShoot : Path
 
     public override void Shoot(Spell spell, float speedSpell, Transform positionFrom, float lifeTimeSpell)
     {
-        spell = Instantiate(spell, positionFrom.position, Quaternion.identity, positionFrom);
         spell.LifeTimeSpell = lifeTimeSpell;
         _power = speedSpell;
         _isStartShoot = true;
+        Instantiate(spell, positionFrom.position, Quaternion.identity, positionFrom);
     }
 }
 
