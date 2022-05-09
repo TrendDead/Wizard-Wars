@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 489149525693141165}
   - component: {fileID: -2984470255744092293}
   m_Layer: 0
-  m_Name: CircleLine
+  m_Name: BallLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
