@@ -5,21 +5,17 @@ using UnityEngine;
 /// <summary>
 /// Компонент летящей способности
 /// </summary>
-[RequireComponent(typeof(Rigidbody2D))]
 public class Spell : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _ps;
     [SerializeField] private List<Effect> _effects;
     //[SerializeField] private ParticleSystem _psDeath;
 
-    private Rigidbody2D _rb2d;
-
     //[HideInInspector] 
     public float LifeTimeSpell;
     
     private void OnEnable()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
         //_ps.Play();
     }
 
@@ -46,7 +42,7 @@ public class Spell : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         UseSpell();
     }
