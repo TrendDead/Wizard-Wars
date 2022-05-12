@@ -5749,5 +5749,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7b58eb67eba9041a67d858cb028986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainAbillity: {fileID: 11400000, guid: 2548dc540d7e84347897d86d73fe3b8a, type: 2}
+  _mainAbillity: {fileID: 11400000, guid: 5c9499738ec44a44c842ab8d7e62c201, type: 2}
   _plauerTrans: {fileID: 94860302}

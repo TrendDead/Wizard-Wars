@@ -20,7 +20,6 @@ public class TargetShoot : Path
     private void Start()
     {
         _spell = GetComponent<Spell>();
-        Debug.Log(MAXTIME - _timeMove);
         _tween = transform.DOMove(_target.position, MAXTIME - _timeMove).SetAutoKill(false);
         _targetLastPosition = _target.position;
         transform.parent = null;
